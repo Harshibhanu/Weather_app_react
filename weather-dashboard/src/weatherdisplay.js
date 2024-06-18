@@ -43,7 +43,7 @@ const WeatherDisplay = ({ weatherData, forecastData, airPollutionData,addFavorit
       <div className="current-weather space-y-4 alpha-4">
         <b>Now</b>
         <div className="current-degree">
-          <p className="text-7xl">{weatherData.main.temp}<sup>o<sub>c</sub></sup></p>
+          <p className="text-7xl">{weatherData.main.temp}<sup>o</sup><sub style={{fontSize:'50px'}}>c</sub></p>
           <FontAwesomeIcon icon={getWeatherIcon(weatherData.weather[0].icon)} size="3x" />
         </div>
         <p className="weatherdes">{weatherData.weather[0].description}</p>

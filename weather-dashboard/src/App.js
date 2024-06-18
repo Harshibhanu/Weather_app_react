@@ -1,5 +1,4 @@
 
-
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
@@ -11,7 +10,7 @@ import FavoriteCities from './favorites';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
-import Loader from './loading'; // Import Loader component
+import Loader from './loading';
 
 library.add(fas);
 
@@ -38,7 +37,7 @@ const App = () => {
   }, []);
 
   const getWeatherData = async (city) => {
-    setLoading(true); // Start loading
+    setLoading(true); 
     const apiKey = 'fb1edf8562680d21e4a6f7cb83c8847b';
     const geocodingUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`;
 
@@ -82,19 +81,7 @@ const App = () => {
     }
   };
 
-  // const removeFavoriteCity = async (city) => {
-  //   try {
-  //     const cityToDelete = favoriteCities.find(favCity => favCity === city);
-  //     if (cityToDelete) {
-  //       const response = await axios.get(jsonServerUrl);
-  //       const cityId = response.data.find(item => item.city === city)._id;
-  //       await axios.delete(`${jsonServerUrl}/${cityId}`);
-  //       setFavoriteCities(favoriteCities.filter(favCity => favCity !== city));
-  //     }
-  //   } catch (error) {
-  //     console.error('Error removing favorite city:', error);
-  //   }
-  // };
+
   const removeFavoriteCity = async (city) => {
     try {
       const response = await axios.get(jsonServerUrl);
