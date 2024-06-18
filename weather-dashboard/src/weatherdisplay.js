@@ -21,7 +21,7 @@ const WeatherDisplay = ({ weatherData, forecastData, airPollutionData,addFavorit
     return groupedForecast;
   };
 
-  // Group forecast data by date and get first temperature entry
+  
   const groupedForecast = groupForecastByDate(forecastData.list);
   const getWindDirectionStyle = (deg) => {
     return { transform: `rotate(${deg}deg)` };

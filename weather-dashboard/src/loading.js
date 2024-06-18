@@ -1,6 +1,6 @@
 // Loader.js
 import React from 'react';
-import './index.css'; // Make sure to create this CSS file for styling the loader
+import './index.css'; 
 
 const Loader = () => (
   <div className="loader-container">

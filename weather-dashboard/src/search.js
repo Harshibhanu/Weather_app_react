@@ -22,7 +22,6 @@ const Search = ({ getWeatherData,loading }) => {
         onChange={(e) => setCity(e.target.value)}
         placeholder="Enter city name"
       />
-      {/* <button onClick={handleSearch} className='button'>Search</button> */}
       <button onClick={handleSearch} className='button' disabled={loading}>
             {loading ? 'Loading...' : 'Search'}
           </button>

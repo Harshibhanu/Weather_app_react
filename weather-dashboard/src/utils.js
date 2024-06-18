@@ -12,7 +12,7 @@ import {
   faSnowflake,
   faSmog
 } from '@fortawesome/free-solid-svg-icons';
-// Define icons for diagonal directions
+
 const faArrowUpRight = { icon: faArrowUp, rotation: 45 };
 const faArrowDownRight = { icon: faArrowDown, rotation: 45 };
 const faArrowDownLeft = { icon: faArrowDown, rotation: -45 };
@@ -20,23 +20,23 @@ const faArrowUpLeft = { icon: faArrowUp, rotation: -45 };
 
 export const getWindDirectionIcon = (angle) => {
     if (angle >= 337.5 || angle < 22.5) {
-        return { icon: faArrowUp, rotation: 0 }; // North
+        return { icon: faArrowUp, rotation: 0 }; 
     } else if (angle >= 22.5 && angle < 67.5) {
-        return faArrowUpRight; // North-East
+        return faArrowUpRight; 
     } else if (angle >= 67.5 && angle < 112.5) {
-        return { icon: faArrowRight, rotation: 0 }; // East
+        return { icon: faArrowRight, rotation: 0 };
     } else if (angle >= 112.5 && angle < 157.5) {
-        return faArrowDownRight; // South-East
+        return faArrowDownRight; 
     } else if (angle >= 157.5 && angle < 202.5) {
-        return { icon: faArrowDown, rotation: 0 }; // South
+        return { icon: faArrowDown, rotation: 0 }; 
     } else if (angle >= 202.5 && angle < 247.5) {
-        return faArrowDownLeft; // South-West
+        return faArrowDownLeft; 
     } else if (angle >= 247.5 && angle < 292.5) {
-        return { icon: faArrowLeft, rotation: 0 }; // West
+        return { icon: faArrowLeft, rotation: 0 }; 
     } else if (angle >= 292.5 && angle < 337.5) {
-        return faArrowUpLeft; // North-West
+        return faArrowUpLeft; 
     } else {
-        return { icon: faArrowUp, rotation: 0 }; // Default to North
+        return { icon: faArrowUp, rotation: 0 }; 
     }
 };
 
@@ -63,7 +63,7 @@ export const getWindDirectionIcon = (angle) => {
       '50n': faSmog
     };
   
-    return iconMap[iconCode] || faSun; // Default icon if code not found
+    return iconMap[iconCode] || faSun; 
   };
  
 
@@ -72,13 +72,12 @@ export const getWindDirectionIcon = (angle) => {
     const options = { weekday: 'long', month: 'long', day: 'numeric' };
     return date.toLocaleDateString(undefined, options);
   };
-  // utils.js
+  
   export const formatShortDate = (date) => {
     return new Intl.DateTimeFormat('en-US', { day: 'numeric', month: 'short' }).format(date);
   };
 
   export function airqualityDes(airquality) {
-    // Define logic to return a description based on airquality value
     if (airquality === 1) {
         return 'Good';
     } else if (airquality === 2) {
